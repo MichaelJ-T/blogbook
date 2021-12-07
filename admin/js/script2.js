@@ -37,16 +37,12 @@ $(document).ready(function(){
 function loadusers(){
     if (!checkIfWindowIsHidden()) {
         $.get("functions.php?useronline=result",function(data){
-            
-            $(".useronline").text(data);
-            
-            
+            $(".useronline").text(data);        
         });
         setTimeout(function(){loadusers()},1000);
     }else {
         setTimeout(function(){loadusers()}, 3000);
     }
-
 }
 
 function checkIfWindowIsHidden() {
