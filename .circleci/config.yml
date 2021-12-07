@@ -39,6 +39,7 @@ jobs:
           name: "Run Unit Tests"
           command: ./vendor/bin/phpunit 
 
+      - checkout
       - sonarcloud/scan:
           sonar_token_variable_name: SONAR_TOKEN 
 
@@ -50,7 +51,7 @@ workflows:
   main:
     jobs:
       - build:
-          context: SonarCloud
+          context: sonarcloud
           
 
 
