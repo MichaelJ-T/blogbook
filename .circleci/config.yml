@@ -1,9 +1,18 @@
 version: 2.1
 
-machinge:
-  php:
-    version: 8.0.11
+orbs:
+  phpunit: stockfiller/phpunit@1.1.0
 
-test:
-  override:
-    - vendor/bin/phpunit
+jobs:
+  phpunit-tests:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - phpunit/test:
+          configuration: "\\tests\\unit" 
+
+workflows:
+  tests-workflow:
+    jobs:
+      - phpunit-tests
