@@ -1,0 +1,11 @@
+{
+    "require": {
+        "php": ">=8",
+        "phpunit/phpunit": "^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichaelJ-T\\blogbook\\": "./"
+        }
+    }
+}
