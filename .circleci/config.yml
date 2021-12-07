@@ -41,9 +41,11 @@ jobs:
       - checkout
       - sonarcloud/scan:
           sonar_token_variable_name: SONAR_TOKEN 
+      
 
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
+  github-super-linter: circleci/github-super-linter@1.0.0
 
 version: 2.1
 workflows:
@@ -51,6 +53,7 @@ workflows:
     jobs:
       - build:
           context: sonarcloud
+      - github-super-linter/lint
           
 
 
