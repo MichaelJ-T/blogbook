@@ -2,18 +2,12 @@
 #
 # Check https://circleci.com/docs/2.0/language-php/ for more details
 #
-version: 2
-
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.1
-
 jobs:
   build:
-    context: SonarCloud
     docker:
       # Specify the version you desire here
       - image: circleci/php:8.0.11
-      - image: cimg/base:stable
+      - image: 'node:latest'
 
     steps:
       - checkout
@@ -47,6 +41,16 @@ jobs:
 
       - sonarcloud/scan:
           sonar_token_variable_name: SONAR_TOKEN 
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+
+version: 2.1
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
           
 
 
