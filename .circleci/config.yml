@@ -6,7 +6,6 @@ orbs:
 jobs:
   phpunit-tests:
     docker:
-      # replace with your preferred image
       - image: cimg/base:stable
     steps:
       - phpunit/test:
