@@ -7,7 +7,6 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: circleci/php:8.0.11
-      - image: 'node:latest'
 
     steps:
       - checkout
