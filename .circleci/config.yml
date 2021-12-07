@@ -37,5 +37,5 @@ jobs:
       # run tests with phpunit
       - run:
           name: "Run Unit Tests"
-          command: ./vendor/bin/phpunit
+          command: ./vendor/bin/phpunit .blogbook/tests/unit
 
